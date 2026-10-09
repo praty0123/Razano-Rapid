@@ -58,9 +58,9 @@ export function MainHeader() {
     : addr ? [addr.line2, addr.sector ? `Sector ${addr.sector}` : ''].filter(Boolean).join(', ') : 'Set visit address'
   return (
     <header className="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)] no-print">
-      <div className="h-20 px-margin-mobile flex items-center justify-between gap-space-sm max-w-[560px] mx-auto">
+      <div className="h-[100px] px-margin-mobile flex items-center justify-between gap-space-sm max-w-[560px] mx-auto">
         <div className="flex flex-col justify-center min-w-0 flex-1 gap-0.5">
-          <Link to="/" aria-label="Razano Rapid home" className="self-start"><Logo className="h-10 w-auto -ml-1" /></Link>
+          <Link to="/" aria-label="Razano Rapid home" className="self-start"><Logo className="h-[60px] w-auto -ml-1" /></Link>
             {isNurse ? (
               <div className="flex items-center gap-0.5 min-w-0">
                 <Icon name="badge" className="text-[15px] text-secondary flex-shrink-0" />
@@ -186,7 +186,7 @@ export function TabPage({ children }: { children: ReactNode }) {
   return (
     <>
       <MainHeader />
-      <main className="flex flex-col relative w-full pt-20 pb-28 bg-surface max-w-[560px] mx-auto min-h-screen">
+      <main className="flex flex-col relative w-full pt-[104px] pb-28 bg-surface max-w-[560px] mx-auto min-h-screen">
         <div className="flex flex-col w-full">{children}</div>
       </main>
       <BottomNav />

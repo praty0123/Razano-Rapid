@@ -12,7 +12,7 @@ export function Spinner({ className = 'text-[18px]' }: { className?: string }) {
 
 /** Brand logo: full wordmark (/razano_logo.png) or heart mark (/logo-mark.png). */
 export function Logo({ className = 'h-10 w-auto', variant = 'full' }: { className?: string; variant?: 'full' | 'mark' }) {
-  return <img alt="Razano Rapid" className={`${className} object-contain flex-shrink-0`} src={variant === 'full' ? '/razano_logo.png' : '/logo-mark.png'} />
+  return <img alt="Razano Rapid" className={`${className} object-contain flex-shrink-0`} src={variant === 'full' ? '/rapid-logo.png' : '/logo-mark.png'} />
 }
 
 export function Avatar({ name, photo, className = 'w-8 h-8', textClass = 'text-label-md' }: { name?: string | null; photo?: string | null; className?: string; textClass?: string }) {
