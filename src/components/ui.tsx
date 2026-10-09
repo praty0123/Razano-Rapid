@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { initials } from '../lib/format'
 import type { Status } from '../lib/types'
 
@@ -10,10 +10,9 @@ export function Spinner({ className = 'text-[18px]' }: { className?: string }) {
   return <Icon name="progress_activity" className={`animate-spin ${className}`} />
 }
 
-/** Uses /razano_logo.png if you add one to /public; otherwise the built-in mark. */
-export function Logo({ className = 'h-8 w-auto' }: { className?: string }) {
-  const [src, setSrc] = useState('/razano_logo.png')
-  return <img alt="Razano Rapid" className={`${className} object-contain flex-shrink-0`} src={src} onError={() => setSrc('/logo.svg')} />
+/** Brand logo: full wordmark (/razano_logo.png) or heart mark (/logo-mark.png). */
+export function Logo({ className = 'h-10 w-auto', variant = 'full' }: { className?: string; variant?: 'full' | 'mark' }) {
+  return <img alt="Razano Rapid" className={`${className} object-contain flex-shrink-0`} src={variant === 'full' ? '/razano_logo.png' : '/logo-mark.png'} />
 }
 
 export function Avatar({ name, photo, className = 'w-8 h-8', textClass = 'text-label-md' }: { name?: string | null; photo?: string | null; className?: string; textClass?: string }) {

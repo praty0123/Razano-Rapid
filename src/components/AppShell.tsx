@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from 'react'
-import { NavLink, useNavigate } from 'react-router'
+import { Link, NavLink, useNavigate } from 'react-router'
 import { useSession } from '../lib/session'
 import { liveEta } from '../lib/eta'
 import { Avatar, Icon, Logo, Sheet } from './ui'
@@ -59,13 +59,8 @@ export function MainHeader() {
   return (
     <header className="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)] no-print">
       <div className="h-20 px-margin-mobile flex items-center justify-between gap-space-sm max-w-[560px] mx-auto">
-        <div className="flex items-center gap-space-sm min-w-0 flex-1">
-          <Logo className="h-8 w-auto" />
-          <div className="flex flex-col min-w-0">
-            <div className="flex items-center gap-space-xs">
-              <span className="font-headline-sm text-headline-sm text-primary tracking-tight truncate">Razano Rapid</span>
-              <span className="font-label-sm text-label-sm uppercase px-1.5 py-0.5 rounded-full bg-verified-emerald-light text-secondary font-bold flex-shrink-0">20 MIN</span>
-            </div>
+        <div className="flex flex-col justify-center min-w-0 flex-1 gap-0.5">
+          <Link to="/" aria-label="Razano Rapid home" className="self-start"><Logo className="h-10 w-auto -ml-1" /></Link>
             {isNurse ? (
               <div className="flex items-center gap-0.5 min-w-0">
                 <Icon name="badge" className="text-[15px] text-secondary flex-shrink-0" />
@@ -78,7 +73,6 @@ export function MainHeader() {
                 <Icon name="expand_more" className="text-[16px] text-outline flex-shrink-0" />
               </button>
             )}
-          </div>
         </div>
         <div className="flex items-center gap-space-sm flex-shrink-0">
           <SosButton onClick={openSos} />
@@ -114,7 +108,7 @@ export function BackHeader({ title, onBack }: { title: string; onBack?: () => vo
             className="w-11 h-11 -ml-2 flex items-center justify-center text-on-surface active:scale-95 transition-transform flex-shrink-0">
             <Icon name="arrow_back" className="text-[24px]" />
           </button>
-          <Logo className="h-7 w-auto" />
+          <Logo variant="mark" className="h-8 w-auto" />
           <h1 className="font-headline-sm text-headline-sm text-on-surface truncate">{title}</h1>
         </div>
         <div className="flex items-center gap-space-xs flex-shrink-0">
